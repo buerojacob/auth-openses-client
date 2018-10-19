@@ -67,11 +67,11 @@ export class AuthenticationService {
 
     if (method === 'post') {
       // base = this.http.post(`/api/${type}`, user);
-      // base = this.http.post('http://localhost:3000/api/' + `${type}`, user);
-      base = this.http.post('https://localhost:3443/api/' + `${type}`, user);
+      // base = this.http.post('https://localhost:80/api/' + `${type}`, user);
+      base = this.http.post('https://auth-openses.westeurope.azurecontainer.io:443/api/' + `${type}`, user);
     } else {
-      // base = this.http.get(`/api/${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
-      base = this.http.get('https://localhost:3443/api/' + `${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+     // base = this.http.get('https://localhost:80/api/' + `${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+    base = this.http.get('https://auth-openses.westeurope.azurecontainer.io:443/api/' + `${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
 
     const request = base.pipe(
