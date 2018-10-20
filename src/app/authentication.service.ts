@@ -71,7 +71,8 @@ export class AuthenticationService {
       base = this.http.post('https://auth-openses.westeurope.azurecontainer.io:443/api/' + `${type}`, user);
     } else {
      // base = this.http.get('https://localhost:80/api/' + `${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
-    base = this.http.get('https://auth-openses.westeurope.azurecontainer.io:443/api/' + `${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
+    // tslint:disable-next-line:max-line-length
+     base = this.http.get('https://auth-openses.westeurope.azurecontainer.io:443/api/' + `${type}`, { headers: { Authorization: `Bearer ${this.getToken()}` }});
     }
 
     const request = base.pipe(
